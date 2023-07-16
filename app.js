@@ -5,7 +5,7 @@ const app = express();
 var path = require('path');
 const mysql = require('mysql')
 const cors = require('cors');
-app.use(cors({origin: ['http://localhost:3000' ]}));
+app.use(cors({origin: ['http://ec2-3-111-171-65.ap-south-1.compute.amazonaws.com:3000' ]}));
 
 var pool  = mysql.createPool({
     connectionLimit : 10,
