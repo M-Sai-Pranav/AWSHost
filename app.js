@@ -47,7 +47,7 @@ app.get("/hello", (req, res) => {
     res.sendFile(path.resolve('index.html'));
     });
 app.listen(3000, () => {
-console.log("Listening to port 3000", origin);
+console.log("Listening to port 3000");
 });
 
 // 1. create dev and prod environments
