@@ -6,7 +6,7 @@ var path = require('path');
 const mysql = require('mysql')
 const cors = require('cors');
 const { allowedNodeEnvironmentFlags } = require("process");
-app.use(cors({origin: ['http://ec2-43-205-208-82.ap-south-1.compute.amazonaws.com:3000' ]}));
+app.use(cors({origin: ['http://ec2-65-0-102-95.ap-south-1.compute.amazonaws.com:3000' ]}));
 
 var pool  = mysql.createPool({
     connectionLimit : 10,
