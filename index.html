@@ -64,7 +64,8 @@
     <script>
         function myFunction() {
             fetch('http://ec2-3-111-171-65.ap-south-1.compute.amazonaws.com:3000/index', {
-                method: 'get'
+                method: 'get',
+                mode: 'cors',
             })
             .then(response => {
                 console.log(response)
