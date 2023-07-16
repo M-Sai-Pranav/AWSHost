@@ -9,9 +9,9 @@ app.use(cors({origin: ['http://ec2-3-111-171-65.ap-south-1.compute.amazonaws.com
 
 var pool  = mysql.createPool({
     connectionLimit : 10,
-    host            : 'localhost',
+    host            : 'database-1.cyhbscucjjto.ap-south-1.rds.amazonaws.com',
     user            : 'root',
-    password        : 'pranav',
+    password        : 'pranavdb',
     database        : 'pranav'
   });
 
