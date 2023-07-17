@@ -6,19 +6,18 @@ var path = require('path');
 const mysql = require('mysql')
 const cors = require('cors');
 const { allowedNodeEnvironmentFlags } = require("process");
-app.use(cors({origin: ['http://ec2-65-0-102-95.ap-south-1.compute.amazonaws.com:3000' ]}));
+app.use(cors({origin: [`http://${process.env.DOMAIN}:3000` ]}));
 
 var pool  = mysql.createPool({
     connectionLimit : 10,
-    host            : 'database-1.cyhbscucjjto.ap-south-1.rds.amazonaws.com',
-    user            : 'admin',
-    password        : 'pranavdb',
+    host            :  `${process.env.DBHOST}`,
+    user            :  `${process.env.DBUSER}`,
+    password        : `${process.env.DBPASSWORD}`,
     database        : 'pranav'
   });
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
@@ -50,7 +49,8 @@ app.listen(3000, () => {
 console.log("Listening to port 3000");
 });
 
-// 1. create dev and prod environments
-// 2. ssh for git
+
 // 3. domain name for the domainname
 // 4. ngnix to eliminate port number.
+
+// Domain name and Elasitic IP ( Register your own domain name and IP Address )  
